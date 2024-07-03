@@ -3,11 +3,18 @@ using System.Collections.Generic;
 
 class Program{
     static void Main(){
+        // Estas listas es para ir guardando cada usuario que se registre y su contraseña
         List<string> User = new List<string>{"Jonaifry"};
         List<string>Password = new List<string>{"1234"};
+
+        // El Administrador
         string ADMIN = "Bibli!@gmail.com";
+
+        // Para conocer que el programa esta en uso
         bool prog = true;
         string resp, user, pass;
+
+        // Comienza el programa
         while(prog){
             Console.WriteLine("Bienvenido a la Biblioteca");
             
@@ -24,12 +31,14 @@ class Program{
                     Console.Write("\n Contraseña: ");
                     pass = Console.ReadLine()!;
 
+                    // Verificamos si el usario y la contraseña son correctas.
                     for(int i = 0; i < User.Count(); i++){
-                        if(user == User[i] || pass == Password[i]){
+                        if(user == User[i] && pass == Password[i]){
                             Console.WriteLine($"Bienvenido {user}");
                             Userr(user);
                             break;
                         }
+                        // Verificamos si la cuenta ADMIN
                         else if(user == ADMIN){
                             Console.WriteLine($"Bienvenido Administrador {user}");
                             Admin();
@@ -45,6 +54,7 @@ class Program{
                     }               
                 break;
 
+                // Registro de un nuevo Usuario
                 case "2":
                     Console.WriteLine("\n Registro");
                     Console.Write("\n Usuario: ");

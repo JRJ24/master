@@ -80,6 +80,7 @@ class Program{
             }while(resp > 2);
 
             if(resp == 1){
+                // Llameremos a la funcion catalogo en donde se haran las opciones como Alquilar un libro o devolverlo.
                 // Catalogo();
             }
         }catch(Exception e){

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 class Program{
+    
     private static string[] titulos = new string[100];
     private static string[] autores = new string[100];
     private static int[] años = new int[100];
@@ -20,14 +21,17 @@ class Program{
         // Para conocer que el programa esta en uso
         bool prog = true;
         string resp, user, pass;
-
+Console.ForegroundColor = ConsoleColor.Green;
         // Comienza el programa
         while(prog){
-            Console.WriteLine("Bienvenido a la Biblioteca");
-            
-            Console.WriteLine("Tienes una cuenta?");
-            Console.WriteLine("\n 1) Inicio de Sesion");
-            Console.WriteLine("\n 2) Registrarse");
+Console.WriteLine("╔═════════════════════════════╗");
+Console.WriteLine("║  Bienvenido a la Biblioteca ║");
+Console.WriteLine("╠═════════════════════════════╣");
+Console.WriteLine("║     ¿Tienes una cuenta?     ║");
+Console.WriteLine("║                             ║");
+Console.WriteLine("║   1) Inicio de Sesión       ║");
+Console.WriteLine("║   2) Registrarse            ║");
+Console.WriteLine("╚═════════════════════════════╝");
             resp = Console.ReadLine()!;
 
             switch(resp){
@@ -90,14 +94,15 @@ class Program{
             Console.Clear();
             int resp;
             Console.WriteLine(user);
-            Console.WriteLine("*****************************************");
-            Console.WriteLine("*                                       *");
-            Console.WriteLine("*                  Menu                 *");
-            Console.WriteLine("*                                       *");
-            Console.WriteLine("*    1) Catalogo 'Libros'               *");
-            Console.WriteLine("*    2) Salir                           *");
-            Console.WriteLine("*                                       *");
-            Console.WriteLine("*****************************************");
+            Console.WriteLine("╔═════════════════════════════╗");
+            Console.WriteLine("║  Bienvenido a la Biblioteca ║");
+            Console.WriteLine("╠═════════════════════════════╣");
+            Console.WriteLine("║             Menú            ║");
+            Console.WriteLine("╠═════════════════════════════╣");
+            Console.WriteLine("║    1) Catálogo 'Libros'     ║");
+            Console.WriteLine("║    2) Salir                 ║");
+            Console.WriteLine("╚═════════════════════════════╝");
+            
             try{
                 do{
                     resp = Convert.ToInt32(Console.ReadLine()!);
@@ -122,14 +127,14 @@ class Program{
         while(AdminProg){
             Console.Clear();
             int opcion;
-            Console.WriteLine("*********************************************************");
-            Console.WriteLine("*           Sistema de Gestión de Librería              *");
-            Console.WriteLine("*    1. Añadir Libro                                    *");
-            Console.WriteLine("*    2. Listar Libros                                   *");
-            // Console.WriteLine("*    3. Añadir Usuario                                  *");
-            Console.WriteLine("*    4. Listar Usuarios                                 *");
-            Console.WriteLine("*    0. Salir                                           *");
-            Console.WriteLine("*********************************************************");
+            Console.WriteLine("╔══════════════════════════════════════════════════╗");
+            Console.WriteLine("║           Sistema de Gestión de Librería         ║");
+            Console.WriteLine("╠══════════════════════════════════════════════════╣");
+            Console.WriteLine("║    1. Añadir Libro                               ║");
+            Console.WriteLine("║    2. Listar Libros                              ║");
+            Console.WriteLine("║    4. Listar Usuarios                            ║");
+            Console.WriteLine("║    0. Salir                                      ║");
+            Console.WriteLine("╚══════════════════════════════════════════════════╝");
             Console.Write("\nIngrese su opción: ");
             do{
                 opcion = int.Parse(Console.ReadLine()!);
@@ -140,12 +145,16 @@ class Program{
                         break;
                     case 2:
                         ListarLibros();
+                        Console.ReadKey();
+                        Thread.Sleep(2000);
                         break;
                     /*case 3:
                         // AnadirUsuario();
                         break; */
                     case 4:
                         ListarUsuarios(User);
+                        Console.ReadKey();
+                        Thread.Sleep(2000);
                         break;
                     case 0:
                         Console.WriteLine("Saliendo...");
@@ -223,5 +232,4 @@ class Program{
         return user;
     }
 }
-
 

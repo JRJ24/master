@@ -65,6 +65,10 @@ class Program{
                     User.Add(user);
                     Password.Add(pass);
                 break;
+
+                default:
+                    prog = !prog;
+                break;
             }
 
         }

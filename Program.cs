@@ -27,7 +27,7 @@ class Program{
                     for(int i = 0; i < User.Count(); i++){
                         if(user == User[i] || pass == Password[i]){
                             Console.WriteLine($"Bienvenido {user}");
-                            Userr();
+                            Userr(user);
                             break;
                         }
                         else if(user == ADMIN){
@@ -61,8 +61,30 @@ class Program{
         
     }
 
-    public static void Userr(){
+    public static void Userr(string user){
         // Todo relacionado con el usuario
+        Console.Clear();
+        int resp;
+        Console.WriteLine(user);
+        Console.WriteLine("*****************************************");
+        Console.WriteLine("*                                       *");
+        Console.WriteLine("*                  Menu                 *");
+        Console.WriteLine("*                                       *");
+        Console.WriteLine("*    1) Catalogo 'Libros'               *");
+        Console.WriteLine("*    2) Salir                           *");
+        Console.WriteLine("*                                       *");
+        Console.WriteLine("*****************************************");
+        try{
+            do{
+                resp = Convert.ToInt32(Console.ReadLine()!);
+            }while(resp > 2);
+
+            if(resp == 1){
+                // Catalogo();
+            }
+        }catch(Exception e){
+            Console.WriteLine(e);
+        }
     }
 
     public static void Admin(){

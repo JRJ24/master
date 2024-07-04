@@ -102,7 +102,6 @@ Console.WriteLine("╚═══════════════════�
             Console.WriteLine("║    1) Catálogo 'Libros'     ║");
             Console.WriteLine("║    2) Salir                 ║");
             Console.WriteLine("╚═════════════════════════════╝");
-            
             try{
                 do{
                     resp = Convert.ToInt32(Console.ReadLine()!);
@@ -110,7 +109,7 @@ Console.WriteLine("╚═══════════════════�
 
                 if(resp == 1){
                     // Llameremos a la funcion catalogo en donde se haran las opciones como Alquilar un libro o devolverlo.
-                    // Catalogo();
+                    Catalogo();
                 }
                 else{
                     UserProg = !UserProg;
@@ -118,7 +117,8 @@ Console.WriteLine("╚═══════════════════�
             }catch(Exception e){
                 Console.WriteLine(e);
             }
-
+            
+        
         }
     }
 
@@ -172,7 +172,11 @@ Console.WriteLine("╚═══════════════════�
 
     // Anda vacio, esto seria para el usuario
     public static void Catalogo(){
-
+        for (int i = 0; i < cantidadLibros; i++)
+        {
+            Console.WriteLine($"Título: {titulos[i]}, Autor: {autores[i]}, Año: {años[i]}");
+        }
+        Console.ReadKey();
     }
 
     // Función para añadir un libro
@@ -198,20 +202,20 @@ Console.WriteLine("╚═══════════════════�
     }
 
     // Función para listar todos los libros
-    public static void ListarLibros()
+    public static(int [], string[], string[]) ListarLibros()
     {
         if (cantidadLibros == 0)
         {
             Console.WriteLine("No hay libros disponibles.");
             // Cual es la funcion de este Return
-            return;
         }
 
         Console.WriteLine("Lista de Libros:");
         for (int i = 0; i < cantidadLibros; i++)
         {
-            Console.WriteLine($"Título: {titulos[i]}, Autor: {autores[i]}, Año: {años[i]}");
+            Console.WriteLine($"Título: {titulos[i]} - Autor: {autores[i]} - Año: {años[i]}");
         }
+        return(años, titulos, autores);
     }
 
    // Mostrar los usuarios, solo faltaria agregarle que libro alquilo.

@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 class Program{
     
@@ -31,9 +32,11 @@ Console.WriteLine("║     ¿Tienes una cuenta?     ║");
 Console.WriteLine("║                             ║");
 Console.WriteLine("║   1) Inicio de Sesión       ║");
 Console.WriteLine("║   2) Registrarse            ║");
+Console.WriteLine("║   3) Salir                  ║");
 Console.WriteLine("╚═════════════════════════════╝");
             resp = Console.ReadLine()!;
-
+            
+            Console.Clear();
             switch(resp){
                 case "1":
                     Console.WriteLine("\n Inicio de Sesion");
@@ -78,8 +81,12 @@ Console.WriteLine("╚═══════════════════�
                     cantidadUsuarios++;
                 break;
 
-                default:
+                case "3":
                     prog = !prog;
+                break;
+
+                default:
+                System.Console.WriteLine("Opcion invalida");
                 break;
             }
 
@@ -236,4 +243,3 @@ Console.WriteLine("╚═══════════════════�
         return user;
     }
 }
-

@@ -1,0 +1,4 @@
+<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XEPDB1</property> 
+<property name="hibernate.connection.username">userAgent</property>
+<property name="hibernate.connection.password">userAgent</property>

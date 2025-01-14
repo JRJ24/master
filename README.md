@@ -1,1 +1,1 @@
-Este codigo esta unificado con todo lo importante. Soy Jonaifry Rodriguez De Jesus y que se yo.
+Saludos! Mi nombre es Jonaifry Rodriguez De Jesus. Soy un estudiante de desarrollo de software en el ITLA, este es mi repositorio en donde subo los proyectos que tengo de programacion.
